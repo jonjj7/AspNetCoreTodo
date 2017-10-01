@@ -33,8 +33,16 @@
   <div class="panel-footer add-item-form">
     <form>
         <div id="add-item-error" class="text-danger"></div>
-        <label for="add-item-title">Add a new item:</label>
-        <input id="add-item-title">
+        <h3>Add a new item</h3>
+        <p>
+            <label for="add-item-title">Title:</label>
+            <input id="add-item-title" type="text">
+        </p>
+        <p>
+            <label for="add-item-dueAt">Due at:</label>
+            <input id="add-item-dueAt" type="date">
+        </p>
+        
         <button type="button" id="add-item-button">Add</button>
     </form>
   </div>
