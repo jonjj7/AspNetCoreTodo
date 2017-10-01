@@ -1,4 +1,4 @@
-@model TodoViewModel;
+@model TodoViewModel
 
 @using Humanizer;
 
@@ -25,7 +25,12 @@
                 <input type="checkbox" name="@item.Id" value="true" class="done-checkbox">
               </td>
               <td>@item.Title</td>
-              <td>@item.DueAt.Humanize()</td>
+              <td>
+                @if (item.DueAt != null)
+                {
+                  @item.DueAt.Value.ToShortDateString()
+                }
+              </td>
           </tr>
       }
   </table>

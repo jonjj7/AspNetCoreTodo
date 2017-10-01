@@ -21,12 +21,12 @@ namespace AspNetCoreTodo.Services
                 new TodoItem
                 {
                     Title = "Learn ASP.NET Core",
-                    DueAt = DateTimeOffset.Now.AddDays(1)
+                    DueAt = DateTime.Now.AddDays(1)
                 },
                 new TodoItem
                 {
                     Title = "Build awesome apps",
-                    DueAt = DateTimeOffset.Now.AddDays(2)
+                    DueAt = DateTime.Now.AddDays(2)
                 }
             };
 

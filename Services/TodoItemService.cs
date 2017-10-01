@@ -25,7 +25,7 @@ namespace AspNetCoreTodo.Services
                 Id = Guid.NewGuid(),
                 IsDone = false,
                 Title = newItem.Title,
-                DueAt = DateTimeOffset.Now.AddDays(3)
+                DueAt = newItem.DueAt
             };
 
             _context.Items.Add(entity);

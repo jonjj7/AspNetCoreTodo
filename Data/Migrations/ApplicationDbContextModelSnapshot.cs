@@ -74,7 +74,7 @@ namespace AspNetCoreTodo.Data.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<DateTimeOffset?>("DueAt");
+                    b.Property<DateTime?>("DueAt");
 
                     b.Property<bool>("IsDone");
 
