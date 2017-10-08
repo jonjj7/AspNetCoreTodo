@@ -6,18 +6,23 @@ using AspNetCoreTodo.Models.ViewModels;
 
 namespace AspNetCoreTodo.Services
 {
-    public class MockTodoItemService : ITodoItemService
+  public class MockTodoItemService : ITodoItemService
+  {
+    public Task<bool> AddItemAsync(NewTodoItem newItem, ApplicationUser currentUser)
     {
-        public Task<bool> AddItemAsync(NewTodoItem newItem)
-        {
-            throw new NotImplementedException();
-        }
+      throw new NotImplementedException();
+    }
 
-        public Task<IEnumerable<TodoItem>> GetIncompleteItemsAsync()
-        {
-            // Return an array of TodoItems
-            IEnumerable<TodoItem> items = new[]
-            {
+    public Task<bool> MarkDoneAsync(Guid id, ApplicationUser currentUser)
+    {
+      throw new NotImplementedException();
+    }
+
+    public Task<IEnumerable<TodoItem>> GetIncompleteItemsAsync(ApplicationUser currentUser)
+    {
+      // Return an array of TodoItems
+      IEnumerable<TodoItem> items = new[]
+      {
                 new TodoItem
                 {
                     Title = "Learn ASP.NET Core",
@@ -30,7 +35,7 @@ namespace AspNetCoreTodo.Services
                 }
             };
 
-            return Task.FromResult(items);
-        }
+      return Task.FromResult(items);
     }
+  }
 }

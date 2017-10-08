@@ -6,10 +6,12 @@ using AspNetCoreTodo.Models.ViewModels;
 
 namespace AspNetCoreTodo.Services
 {
-    public interface ITodoItemService
-    {
-        Task<IEnumerable<TodoItem>> GetIncompleteItemsAsync();
+  public interface ITodoItemService
+  {
+    Task<IEnumerable<TodoItem>> GetIncompleteItemsAsync(ApplicationUser currentUser);
 
-        Task<bool> AddItemAsync(NewTodoItem newItem);
-    }
+    Task<bool> AddItemAsync(NewTodoItem newItem, ApplicationUser currentUser);
+
+    Task<bool> MarkDoneAsync(Guid id, ApplicationUser currentUser);
+  }
 }
