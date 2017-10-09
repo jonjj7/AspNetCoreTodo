@@ -1,0 +1,54 @@
+@model TodoViewModel
+
+@using Humanizer;
+
+@{
+    ViewData["Title"] = "Manage your todo list";
+}
+
+<div class="panel panel-default todo-panel">
+  <div class="panel-heading">@ViewData["Title"]</div>
+
+  <table class="table table-hover">
+      <thead>
+          <tr>
+              <td>&#x2714;</td>
+              <td>Item</td>
+              <td>Due</td>
+          </tr>
+      </thead>
+
+      @foreach (var item in Model.Items)
+      {
+          <tr>
+              <td>
+                <input type="checkbox" name="@item.Id" value="true" class="done-checkbox">
+              </td>
+              <td>@item.Title</td>
+              <td>
+                @if (item.DueAt != null)
+                {
+                  @item.DueAt.Value.ToShortDateString()
+                }
+              </td>
+          </tr>
+      }
+  </table>
+
+  <div class="panel-footer add-item-form">
+    <form>
+        <div id="add-item-error" class="text-danger"></div>
+        <h3>Add a new item</h3>
+        <p>
+            <label for="add-item-title">Title:</label>
+            <input id="add-item-title" type="text">
+        </p>
+        <p>
+            <label for="add-item-dueAt">Due at:</label>
+            <input id="add-item-dueAt" type="text">
+        </p>
+        
+        <button type="button" id="add-item-button">Add</button>
+    </form>
+  </div>
+</div>
